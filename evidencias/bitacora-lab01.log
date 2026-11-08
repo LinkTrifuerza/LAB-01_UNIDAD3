@@ -1,0 +1,56 @@
+2026-11-08 09:20:14 CST LOG:  el sistema de bases de datos fue apagado en 2026-11-08 00:11:30 CST
+2026-11-08 09:25:14 CST LOG:  empezando checkpoint: time
+2026-11-08 09:25:14 CST LOG:  checkpoint completo: escritos 0 b�fers (0.0%); escritos 3 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=0.003 s, sync=0.002 s, total=0.022 s; archivos sincronizados=2, m�s largo=0.001 s, promedio=0.001 s; distancia=0 kB, estimaci�n=0 kB; lsn=0/287E0E8, lsn de redo=0/287E090
+2026-11-08 10:00:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:01:55 CST LOG:  checkpoint completo: escritos 1004 b�fers (6.1%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=101.616 s, sync=0.057 s, total=101.681 s; archivos sincronizados=307, m�s largo=0.001 s, promedio=0.001 s; distancia=4696 kB, estimaci�n=4696 kB; lsn=0/2D14210, lsn de redo=0/2D14180
+2026-11-08 10:19:57 CST LOG:  SENTENCIA: ALTER SYSTEM SET logging_collector = on;
+2026-11-08 10:20:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:20:14 CST LOG:  checkpoint completo: escritos 1 b�fers (0.0%); escritos 0 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=0.102 s, sync=0.001 s, total=0.107 s; archivos sincronizados=1, m�s largo=0.001 s, promedio=0.001 s; distancia=4 kB, estimaci�n=4227 kB; lsn=0/2D15308, lsn de redo=0/2D152B0
+2026-11-08 10:25:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:25:19 CST LOG:  checkpoint completo: escritos 46 b�fers (0.3%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=4.676 s, sync=0.011 s, total=4.691 s; archivos sincronizados=44, m�s largo=0.001 s, promedio=0.001 s; distancia=189 kB, estimaci�n=3823 kB; lsn=0/2D44B00, lsn de redo=0/2D44A70
+2026-11-08 10:30:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:30:19 CST LOG:  checkpoint completo: escritos 43 b�fers (0.3%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=4.366 s, sync=0.009 s, total=4.380 s; archivos sincronizados=37, m�s largo=0.001 s, promedio=0.001 s; distancia=220 kB, estimaci�n=3463 kB; lsn=0/2D7BC78, lsn de redo=0/2D7BBE8
+2026-11-08 10:40:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:40:19 CST LOG:  checkpoint completo: escritos 59 b�fers (0.4%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=5.949 s, sync=0.031 s, total=5.985 s; archivos sincronizados=48, m�s largo=0.022 s, promedio=0.001 s; distancia=221 kB, estimaci�n=3138 kB; lsn=0/2DB3408, lsn de redo=0/2DB33B0
+2026-11-08 10:41:00 CST LOG:  SENTENCIA: REVOKE UPDATE ON clientes FROM soporte_ana;
+GRANT UPDATE ON clientes TO app_ventas;
+ALTER TABLE clientes ADD COLUMN IF NOT EXISTS segmento VARCHAR(20);
+CREATE ROLE rol_temporal LOGIN PASSWORD 'Temporal_Practica_2026';
+DROP ROLE rol_temporal;
+2026-11-08 10:44:12 CST LOG:  SENTENCIA: ALTER SYSTEM SET log_connections = on;
+ALTER SYSTEM SET log_disconnections = on;
+ALTER SYSTEM SET log_line_prefix = '%m [%p] user=%u db=%d app=%a client=%h ';
+ALTER SYSTEM SET log_statement = 'ddl';
+SELECT pg_reload_conf();
+2026-11-08 10:45:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:45:16 CST LOG:  checkpoint completo: escritos 13 b�fers (0.1%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=1.313 s, sync=0.004 s, total=1.321 s; archivos sincronizados=13, m�s largo=0.001 s, promedio=0.001 s; distancia=45 kB, estimaci�n=2829 kB; lsn=0/2DBE8D0, lsn de redo=0/2DBE840
+2026-11-08 10:50:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:50:16 CST LOG:  checkpoint completo: escritos 22 b�fers (0.1%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=2.222 s, sync=0.014 s, total=2.240 s; archivos sincronizados=17, m�s largo=0.010 s, promedio=0.001 s; distancia=122 kB, estimaci�n=2558 kB; lsn=0/2DDD3A0, lsn de redo=0/2DDD348
+2026-11-08 10:54:00 CST LOG:  SENTENCIA: ALTER TABLE clientes ADD COLUMN IF NOT EXISTS edad INT;
+ALTER TABLE clientes ADD COLUMN IF NOT EXISTS ciudad VARCHAR(50);
+ALTER TABLE clientes ADD COLUMN IF NOT EXISTS codigo_postal VARCHAR(10);
+2026-11-08 10:55:14 CST LOG:  empezando checkpoint: time
+2026-11-08 10:55:15 CST LOG:  checkpoint completo: escritos 8 b�fers (0.0%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=0.808 s, sync=0.004 s, total=0.816 s; archivos sincronizados=8, m�s largo=0.001 s, promedio=0.001 s; distancia=31 kB, estimaci�n=2306 kB; lsn=0/2DE5170, lsn de redo=0/2DE5118
+2026-11-08 11:00:14 CST LOG:  empezando checkpoint: time
+2026-11-08 11:00:14 CST LOG:  checkpoint completo: escritos 6 b�fers (0.0%); escritos 0 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=0.607 s, sync=0.002 s, total=0.613 s; archivos sincronizados=5, m�s largo=0.001 s, promedio=0.001 s; distancia=27 kB, estimaci�n=2078 kB; lsn=0/2DEBFD0, lsn de redo=0/2DEBF78
+2026-11-08 11:09:40 CST LOG:  SENTENCIA: CREATE SCHEMA IF NOT EXISTS auditoria;
+
+CREATE OR REPLACE FUNCTION auditoria.fn_auditar_cambios()
+RETURNS TRIGGER AS $$ BEGIN     IF (TG_OP = 'INSERT') THEN         INSERT INTO auditoria.cambios_clientes (momento, usuario_sesion, operacion, valores_antes, valores_despues)         VALUES (clock_timestamp(), current_user, 'INSERT', NULL, to_jsonb(NEW));         RETURN NEW;     ELSIF (TG_OP = 'UPDATE') THEN         INSERT INTO auditoria.cambios_clientes (momento, usuario_sesion, operacion, valores_antes, valores_despues)         VALUES (clock_timestamp(), current_user, 'UPDATE', to_jsonb(OLD), to_jsonb(NEW));         RETURN NEW;     ELSIF (TG_OP = 'DELETE') THEN         INSERT INTO auditoria.cambios_clientes (momento, usuario_sesion, operacion, valores_antes, valores_despues)         VALUES (clock_timestamp(), current_user, 'DELETE', to_jsonb(OLD), NULL);         RETURN OLD;     END IF;     RETURN NULL; END; $$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trigger_auditoria_clientes ON clientes;
+
+CREATE TRIGGER trigger_auditoria_clientes
+AFTER INSERT OR UPDATE OR DELETE ON clientes
+FOR EACH ROW
+EXECUTE FUNCTION auditoria.fn_auditar_cambios();
+
+
+2026-11-08 11:09:54 CST LOG:  SENTENCIA: INSERT INTO clientes (nombre, correo, rfc, edad, ciudad, codigo_postal)
+VALUES ('Pedro Ruiz', 'pedro.ruiz@example.test', 'RUPE950101AAA', 30, 'Guasave', '81000');
+
+DELETE FROM clientes WHERE nombre = 'Pedro Ruiz';
+
+
+2026-11-08 11:10:14 CST LOG:  empezando checkpoint: time
+2026-11-08 11:10:17 CST LOG:  checkpoint completo: escritos 21 b�fers (0.1%); escritos 1 b�fers SLRU; 0 archivos WAL a�adidos, 0 eliminados, 0 reciclados; write=2.124 s, sync=0.005 s, total=2.133 s; archivos sincronizados=20, m�s largo=0.001 s, promedio=0.001 s; distancia=64 kB, estimaci�n=1876 kB; lsn=0/2DFC310, lsn de redo=0/2DFC2B8
